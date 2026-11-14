@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>行程展示｜一起去旅行</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="view">
+
+  <header class="topbar">
+    <div class="top-inner">
+
+      <a class="brand" href="view.html">
+        ✈ 一起去旅行
+      </a>
+
+      <nav class="nav">
+        <a href="wish.html">
+          💛 許願池
+        </a>
+
+        <a href="editor.html">
+          📝 編輯行程
+        </a>
+
+        <a class="active" href="view.html">
+          🗺 行程展示
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="eyebrow">
+        OUR TRIP
+      </div>
+
+      <h1 id="view-title">
+        我們的旅行 🗺
+      </h1>
+
+      <p id="view-subtitle">
+        一起規劃，留下最棒的回憶。
+      </p>
+    </section>
+
+    <section class="panel projectbar">
+
+      <div class="field">
+        <label for="project-select">
+          選擇旅遊專案
+        </label>
+
+        <select id="project-select"></select>
+      </div>
+
+      <div
+        id="mode-indicator"
+        class="mode"
+      ></div>
+
+    </section>
+
+    <div
+      id="message"
+      role="status"
+      aria-live="polite"
+    ></div>
+
+    <section class="panel">
+
+      <div class="section-title">
+        <h2>行程總覽</h2>
+
+        <button
+          class="btn small"
+          id="refresh"
+          type="button"
+        >
+          更新行程
+        </button>
+      </div>
+
+      <div id="budget-summary"></div>
+
+      <div id="itinerary"></div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    有想去的地方嗎？
+
+    <a
+      id="wish-link"
+      href="wish.html"
+    >
+      前往許願池
+    </a>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

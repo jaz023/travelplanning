@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>許願池｜一起去旅行</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="wish">
+
+  <header class="topbar">
+    <div class="top-inner">
+      <a class="brand" href="view.html">
+        ✈ 一起去旅行
+      </a>
+
+      <nav class="nav">
+        <a class="active" href="wish.html">
+          💛 許願池
+        </a>
+        <a href="editor.html">
+          📝 編輯行程
+        </a>
+        <a href="view.html">
+          🗺 行程展示
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="eyebrow">
+        TRAVEL WISHLIST
+      </div>
+
+      <h1>旅行許願池 💛</h1>
+
+      <p>
+        每位旅伴都可以提出景點、美食、
+        住宿、交通或其他需求；
+        編輯人員再將願望排進行程。
+      </p>
+    </section>
+
+    <section class="panel projectbar">
+      <div class="field">
+        <label for="project-select">
+          目前旅遊專案
+        </label>
+
+        <select id="project-select"></select>
+      </div>
+
+      <div
+        class="mode"
+        id="mode-indicator"
+      ></div>
+    </section>
+
+    <div
+      id="message"
+      role="status"
+      aria-live="polite"
+    ></div>
+
+    <div class="layout">
+
+      <!-- 左側：新增願望 -->
+      <section class="panel">
+        <h2>新增願望</h2>
+
+        <form id="wish-form" class="fields">
+
+          <div class="field">
+            <label for="wish-name">
+              景點／願望名稱 *
+            </label>
+
+            <input
+              id="wish-name"
+              maxlength="100"
+              placeholder="例如：淺草寺／想搭新幹線"
+              required
+            >
+          </div>
+
+          <div class="inline-fields">
+
+            <div class="field">
+              <label for="wish-type">類型</label>
+
+              <select id="wish-type">
+                <option>景點</option>
+                <option>美食</option>
+                <option>住宿</option>
+                <option>交通</option>
+                <option>其他需求</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="wish-priority">
+                優先程度
+              </label>
+
+              <select id="wish-priority">
+                <option>想去</option>
+                <option>必去</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="field">
+            <label for="wish-person">
+              許願者
+            </label>
+
+            <input
+              id="wish-person"
+              maxlength="40"
+              placeholder="例如：小明"
+            >
+          </div>
+
+          <div class="field">
+            <label for="wish-note">
+              補充說明
+            </label>
+
+            <textarea
+              id="wish-note"
+              maxlength="1000"
+              placeholder="例如：不想走太多路，下午去比較好"
+            ></textarea>
+          </div>
+
+          <div class="field">
+            <label for="wish-url">
+              參考網址
+            </label>
+
+            <input
+              id="wish-url"
+              type="url"
+              maxlength="500"
+              placeholder="https://..."
+            >
+          </div>
+
+          <button
+            id="wish-submit"
+            class="btn primary"
+            type="submit"
+          >
+            送出願望
+          </button>
+
+        </form>
+      </section>
+
+      <!-- 右側：顯示願望 -->
+      <section class="panel">
+
+        <div class="section-title">
+          <h2>大家的願望</h2>
+
+          <button
+            id="refresh"
+            class="btn small"
+            type="button"
+          >
+            重新整理
+          </button>
+        </div>
+
+        <div id="wishes"></div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    一起去旅行 · GitHub Pages + Google Sheets
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

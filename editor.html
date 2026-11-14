@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>行程編輯｜一起去旅行</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="editor">
+
+  <header class="topbar">
+    <div class="top-inner">
+      <a class="brand" href="view.html">
+        ✈ 一起去旅行
+      </a>
+
+      <nav class="nav">
+        <a href="wish.html">💛 許願池</a>
+        <a class="active" href="editor.html">
+          📝 編輯行程
+        </a>
+        <a href="view.html">🗺 行程展示</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="eyebrow">
+        ITINERARY EDITOR
+      </div>
+
+      <h1>編輯旅遊行程 📝</h1>
+
+      <p>
+        管理旅遊專案，將願望加入每日行程。
+        活動可以拖曳排序、跨日移動，
+        並設定費用與地點。
+      </p>
+    </section>
+
+    <!-- 旅遊專案管理 -->
+    <section class="panel projectbar">
+
+      <div class="field">
+        <label for="project-select">
+          目前旅遊專案
+        </label>
+
+        <select id="project-select"></select>
+      </div>
+
+      <div class="field">
+        <label for="new-project-name">
+          新增專案名稱
+        </label>
+
+        <input
+          id="new-project-name"
+          maxlength="100"
+          placeholder="例如：大阪五天四夜"
+        >
+      </div>
+
+      <button
+        class="btn"
+        id="create-project"
+        type="button"
+      >
+        ＋ 建立專案
+      </button>
+
+      <div
+        class="mode"
+        id="mode-indicator"
+      ></div>
+    </section>
+
+    <div
+      id="message"
+      role="status"
+      aria-live="polite"
+    ></div>
+
+    <!-- 基本行程設定 -->
+    <section class="panel top-settings">
+
+      <div class="inline-fields">
+
+        <div class="field">
+          <label for="trip-title">
+            行程標題
+          </label>
+          <input
+            id="trip-title"
+            maxlength="100"
+          >
+        </div>
+
+        <div class="field">
+          <label for="trip-start">
+            出發日期
+          </label>
+          <input
+            id="trip-start"
+            type="date"
+          >
+        </div>
+
+      </div>
+
+      <div class="inline-fields">
+
+        <div class="field">
+          <label for="trip-currency">
+            費用幣別
+          </label>
+
+          <select id="trip-currency">
+            <option value="TWD">TWD 新台幣</option>
+            <option value="JPY">JPY 日圓</option>
+            <option value="USD">USD 美元</option>
+            <option value="KRW">KRW 韓元</option>
+            <option value="EUR">EUR 歐元</option>
+            <option value="THB">THB 泰銖</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="editor-pin">
+            編輯 PIN（Google 模式必填）
+          </label>
+
+          <input
+            id="editor-pin"
+            type="password"
+            autocomplete="off"
+            placeholder="僅編輯者知道"
+          >
+        </div>
+
+      </div>
+
+      <div class="actions actionbar">
+        <button
+          class="btn success"
+          id="save"
+          type="button"
+        >
+          儲存此專案行程
+        </button>
+
+        <a
+          class="btn"
+          id="view-link"
+          href="view.html"
+        >
+          查看展示頁
+        </a>
+
+        <span
+          class="muted small"
+          id="unsaved"
+        ></span>
+      </div>
+
+    </section>
+
+    <!-- 行程安排區 -->
+    <div class="layout">
+
+      <aside class="panel">
+
+        <div class="section-title">
+          <h2>許願池</h2>
+
+          <button
+            class="btn small"
+            id="refresh"
+            type="button"
+          >
+            重新整理
+          </button>
+        </div>
+
+        <div id="wishes"></div>
+
+      </aside>
+
+      <section class="panel">
+
+        <div class="section-title">
+          <h2>每日行程</h2>
+
+          <button
+            class="btn primary small"
+            id="add-day"
+            type="button"
+          >
+            ＋ 新增一天
+          </button>
+        </div>
+
+        <p class="muted small">
+          電腦可拖曳左側把手排序；
+          手機可使用上移／下移。
+          費用採用單一幣別，不自動換匯。
+        </p>
+
+        <div id="budget-summary"></div>
+        <div id="days"></div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    Google 模式的行程儲存與建立專案
+    須通過後端 PIN 驗證
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

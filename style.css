@@ -1,0 +1,607 @@
+
+:root {
+  font-family: Inter, "Noto Sans TC", system-ui,
+    -apple-system, sans-serif;
+  color: #243243;
+  background: #f6f8fb;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: #2457a7;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* 導覽列 */
+
+.topbar {
+  background: #fff;
+  border-bottom: 1px solid #e1e7ee;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.top-inner {
+  max-width: 1120px;
+  padding: 14px 20px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand {
+  font-size: 19px;
+  font-weight: 800;
+  color: #234c6b;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #5b6775;
+  padding: 9px 12px;
+  border-radius: 9px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.nav a.active,
+.nav a:hover {
+  background: #eaf3fc;
+  color: #1c65a1;
+}
+
+/* 主要版面 */
+
+.container {
+  max-width: 1120px;
+  margin: auto;
+  padding: 32px 20px 64px;
+}
+
+.hero {
+  background: linear-gradient(
+    115deg,
+    #e3f1fc,
+    #f1f9f3
+  );
+  padding: 28px;
+  border-radius: 20px;
+  margin-bottom: 22px;
+}
+
+.eyebrow {
+  color: #35749d;
+  letter-spacing: 0.1em;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.hero h1 {
+  font-size: clamp(25px, 3vw, 36px);
+  margin: 8px 0;
+}
+
+.hero p {
+  color: #5a6979;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #e3e9f0;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 3px 15px #234c6b08;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 20px;
+}
+
+.stack {
+  display: grid;
+  gap: 16px;
+}
+
+.fields {
+  display: grid;
+  gap: 12px;
+}
+
+/* 表單元件 */
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field label {
+  font-weight: 700;
+  font-size: 13px;
+  color: #4b5b6e;
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  border: 1px solid #d7e0e9;
+  border-radius: 10px;
+  background: #fff;
+  padding: 11px 12px;
+  outline: none;
+  color: #25384a;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 82px;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  border-color: #57a3dc;
+  box-shadow: 0 0 0 3px #57a3dc25;
+}
+
+.inline-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* 按鈕 */
+
+.btn {
+  border: 0;
+  border-radius: 9px;
+  padding: 10px 15px;
+  font-weight: 750;
+  background: #e9f0f7;
+  color: #34546e;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  filter: brightness(0.97);
+}
+
+.btn.primary {
+  background: #2779b8;
+  color: #fff;
+}
+
+.btn.success {
+  background: #23866b;
+  color: #fff;
+}
+
+.btn.danger {
+  background: #fff0ef;
+  color: #bc4c43;
+}
+
+.btn.small {
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.panel h2 {
+  font-size: 19px;
+  margin: 0 0 16px;
+}
+
+.muted {
+  color: #728193;
+}
+
+.small {
+  font-size: 12px;
+}
+
+/* 許願池卡片 */
+
+.item {
+  border: 1px solid #e5ebf2;
+  border-radius: 13px;
+  padding: 15px;
+  margin-bottom: 12px;
+  background: #fff;
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
+
+.item h3 {
+  font-size: 16px;
+  margin: 0 0 7px;
+}
+
+.item p {
+  line-height: 1.55;
+  margin: 5px 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.meta {
+  color: #718093;
+  font-size: 12px;
+}
+
+.pill {
+  display: inline-block;
+  background: #eaf3fb;
+  color: #396c96;
+  font-size: 12px;
+  padding: 4px 9px;
+  border-radius: 100px;
+  margin-right: 5px;
+}
+
+.pill.done {
+  background: #e7f5eb;
+  color: #258351;
+}
+
+.item-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.section-title h2 {
+  margin: 0;
+}
+
+/* 行程編輯 */
+
+.day {
+  border: 1px solid #e2e9ef;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  background: #fff;
+}
+
+.day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 17px;
+  background: #edf5fb;
+  border-bottom: 1px solid #e2e9ef;
+}
+
+.day-header h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.day-body {
+  padding: 13px;
+}
+
+.editor-item {
+  border: 1px solid #e4eaf1;
+  border-radius: 12px;
+  padding: 13px;
+  margin-bottom: 11px;
+}
+
+.editor-grid {
+  display: grid;
+  grid-template-columns: 90px 1.1fr 1fr;
+  gap: 9px;
+}
+
+.editor-grid .wide {
+  grid-column: 1 / -1;
+}
+
+.editor-grid .field textarea {
+  min-height: 56px;
+}
+
+.editor-item .actions {
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+/* 系統通知 */
+
+.notice {
+  border: 1px solid #bfddf4;
+  background: #f1f8ff;
+  color: #285b7d;
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin: 14px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.notice.error {
+  background: #fff1ef;
+  border-color: #f0c5bf;
+  color: #9b3830;
+}
+
+.notice.ok {
+  background: #ebf8f0;
+  border-color: #b4e1c5;
+  color: #26744b;
+}
+
+.empty {
+  padding: 23px;
+  text-align: center;
+  color: #8b97a6;
+  border: 1px dashed #d3dfeb;
+  border-radius: 12px;
+}
+
+/* 行程展示時間軸 */
+
+.view-day {
+  margin-bottom: 25px;
+}
+
+.timeline {
+  border-left: 3px solid #d5e8f5;
+  margin: 12px 0 0 12px;
+  padding-left: 24px;
+}
+
+.timeline-card {
+  position: relative;
+  padding: 0 0 23px;
+}
+
+.timeline-card:before {
+  content: "";
+  position: absolute;
+  left: -33px;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #3290c9;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px #c6e3f5;
+}
+
+.timeline-card h3 {
+  margin: 0 0 6px;
+}
+
+.time {
+  font-size: 13px;
+  font-weight: 800;
+  color: #2176ac;
+}
+
+.footer {
+  text-align: center;
+  color: #98a6b4;
+  font-size: 12px;
+  padding: 22px;
+}
+
+#bridge-frame {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+  border: 0;
+}
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  align-items: end;
+  flex-wrap: wrap;
+}
+
+.toolbar .field {
+  flex: 1;
+  min-width: 170px;
+}
+
+.link {
+  word-break: break-all;
+}
+
+.spacer {
+  flex: 1;
+}
+
+/* 旅遊專案設定 */
+
+.projectbar {
+  display: flex;
+  gap: 14px;
+  align-items: end;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.projectbar > .field {
+  flex: 1;
+  min-width: 190px;
+}
+
+.mode {
+  font-size: 12px;
+  color: #517386;
+  align-self: center;
+}
+
+.top-settings {
+  margin-bottom: 18px;
+}
+
+.top-settings .inline-fields {
+  margin-bottom: 12px;
+}
+
+.actionbar {
+  margin-top: 14px;
+}
+
+/* 預算與拖曳 */
+
+.budget-total {
+  padding: 12px;
+  background: #eef8f3;
+  border-radius: 10px;
+  font-weight: 800;
+  color: #28735b;
+}
+
+.drag-handle {
+  cursor: grab;
+  color: #60798e;
+  font-size: 12px;
+  margin-bottom: 10px;
+  user-select: none;
+}
+
+.dragging {
+  opacity: 0.4;
+}
+
+.editor-item[draggable=true] input,
+.editor-item[draggable=true] textarea {
+  cursor: text;
+}
+
+.view-day > .section-title {
+  flex-wrap: wrap;
+}
+
+.view-day > .section-title h2 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.view-day > .section-title a {
+  font-size: 13px;
+}
+
+.view-day {
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e5ebf2;
+}
+
+/* 平板版 */
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .top-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .editor-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .editor-grid .field:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+}
+
+/* 手機版 */
+
+@media (max-width: 520px) {
+  .container {
+    padding: 20px 12px 45px;
+  }
+
+  .hero {
+    padding: 21px;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+
+  .inline-fields,
+  .editor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .editor-grid .field:nth-child(3) {
+    grid-column: auto;
+  }
+
+  .nav a {
+    padding: 8px;
+  }
+
+  .day-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

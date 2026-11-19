@@ -9,7 +9,61 @@
   >
   <title>行程展示｜一起去旅行</title>
   <link rel="stylesheet" href="style.css">
-</head>
+
+  <style>
+    .export-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 12mm;
+      }
+
+      body {
+        background: #fff;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .topbar,
+      .projectbar,
+      .footer,
+      #message,
+      .export-actions {
+        display: none !important;
+      }
+
+      .container {
+        max-width: none;
+        padding: 0;
+      }
+
+      .hero {
+        padding: 14px 20px;
+        margin-bottom: 12px;
+      }
+
+      .panel {
+        box-shadow: none;
+        border: 0;
+        padding: 0;
+      }
+
+      .view-day {
+        break-inside: avoid-page;
+      }
+
+      .timeline-card {
+        break-inside: avoid;
+      }
+    }
+  </style>
+  </head>
 
 <body data-page="view">
 
@@ -81,12 +135,30 @@
       <div class="section-title">
         <h2>行程總覽</h2>
 
+        
+      <div class="export-actions">
         <button
           class="btn small"
           id="refresh"
           type="button"
         >
           更新行程
+        </button>
+
+        <button
+          class="btn small primary"
+          id="export-pdf"
+          type="button"
+        >
+          匯出 PDF
+        </button>
+
+        <button
+          class="btn small success"
+          id="export-html"
+          type="button"
+        >
+          下載離線 HTML
         </button>
       </div>
 
@@ -111,6 +183,7 @@
 
   <script src="config.js"></script>
   <script src="app.js"></script>
+  <script src="export.js"></script>
 
 </body>
 </html>
